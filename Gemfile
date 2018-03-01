@@ -29,7 +29,7 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
 gem 'autoprefixer-rails'
-gem 'bourbon', '4.2.7'
+gem 'bourbon'
 gem 'coffee-script'
 gem 'jekyll-assets', '~> 3.0', '>= 3.0.7'
 gem 'jekyll-paginate'
