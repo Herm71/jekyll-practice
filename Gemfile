@@ -11,7 +11,7 @@ source "https://rubygems.org"
 gem "jekyll", "~> 3.7.3"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "minima", "~> 2.0"
+# gem "minima", "~> 2.0"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
@@ -27,4 +27,25 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
+
+gem 'autoprefixer-rails'
+gem 'bourbon', '4.2.7'
+gem 'coffee-script'
+gem 'jekyll-assets', '~> 3.0', '>= 3.0.7'
+gem 'jekyll-paginate'
+gem 'neat', '~> 2.1'
+gem 's3_website'
+gem 'mini_magick'
+gem 'sass'
+gem 'thin'
+gem 'uglifier'
+gem 'jekyll-lunr-js-search'
+gem 'html-proofer'
+gem 'scss_lint'
+
+group :development do
+  gem 'guard'
+  gem 'guard-jekyll-plus'
+  gem 'guard-livereload'
+end
 
