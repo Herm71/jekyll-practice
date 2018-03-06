@@ -1,0 +1,52 @@
+<head>
+    <meta charset="utf-8">
+    <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.content %}{{ page.content | strip_html | truncatewords:15 }}{% else %}{{ site.description }}{% endif %}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="shortcut icon" href="{% asset_path 'favicon.ico' %}">
+
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" /> {% if page.subhead %}
+    <meta property="og:description" content="{{ page.subhead }}" /> {% endif %}
+
+    <meta property="og:type" content="article" /> {% if page.image %}
+    <meta property="og:image" content='{{ site.url }}{% asset_path "{{ page.image }}" %}' /> {% endif %}
+    <meta property="og:site_name" content="UC Santa Cruz Special Reports" />
+    <meta property="fb:admins" content="1322847221,508316988" />
+    <meta property="article:publisher" content="https://www.facebook.com/ucsantacruz" />
+
+    <script src="{% asset_path feature.min.js %}"></script>
+    <script>
+        feature.testAll();
+    </script>
+
+    {% if page.fonts %}
+    <link rel="stylesheet" href="{{ page.fonts }}" /> {% elsif page.typekit %}
+    <script src="{{ page.typekit }}"></script>
+    <script>
+        try {
+            Typekit.load({
+                async: true
+            });
+        } catch (e) {}
+    </script>
+    {% else %}
+    <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/4d3fa228-32b8-4704-8cb5-220f4a3d0afc.css" /> {% endif %} {% if page.styles %} {{ page.styles | stylesheet }} {% else %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{% asset_path main.css %}" /> {% endif %} {% if page.map %}
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="{% asset_path leaflet-providers.js %}"></script>
+    {% endif %}
+
+</head>

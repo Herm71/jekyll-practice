@@ -1,0 +1,9 @@
+@media print {
+    .article-image {
+        page-break-after: never;
+    }
+    .post-content,
+    .bottom-teaser.cf {
+        padding-top: 0;
+    }
+}
